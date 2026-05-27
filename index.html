@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Study Planner</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: radial-gradient(circle at top, #1e3a8a, #0f172a);
+    color:white;
+}
+
+/* Hero */
+.hero{
+    text-align:center;
+    padding:100px 20px 60px;
+}
+
+.hero h1{
+    font-size:3rem;
+    background: linear-gradient(90deg,#00f2ff,#a855f7);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    opacity:0.8;
+}
+
+/* Section */
+.section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+/* Card */
+.card{
+    width:350px;
+    padding:30px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* Inputs */
+input{
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:1rem;
+    background:rgba(255,255,255,0.15);
+    color:white;
+    caret-color:white;
+}
+
+/* Placeholder */
+input::placeholder{
+    color:#ddd;
+}
+
+/* Focus */
+input:focus{
+    box-shadow:0 0 10px rgba(168,85,247,0.8);
+}
+
+/* Button */
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#00f2ff,#a855f7);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* Hover */
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(168,85,247,0.7);
+}
+</style>
+
+</head>
+<body>
+
+<section class="hero">
+    <h1>✨ Smart Study Planner</h1>
+    <p>Plan smarter. Study better. Win daily. 🚀</p>
+</section>
+
+<section class="section">
+    <div class="card">
+
+        <form method="POST">
+            <input type="text" name="subjects" placeholder="Enter subjects (DSA, DBMS, OS)" required>
+            <input type="number" name="hours" placeholder="Total study hours (e.g. 6)" required>
+            <button class="btn">Generate Smart Plan 🚀</button>
+        </form>
+
+    </div>
+</section>
+
+</body>
+</html>
