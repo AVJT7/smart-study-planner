@@ -1,0 +1,115 @@
+/* ===== Progress Section ===== */
+.progress-bar {
+    width: 80%;
+    height: 22px;
+    margin: 30px auto;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Animated Gradient Progress */
+#progress {
+    height: 100%;
+    width: 0%;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #00f2ff, #a855f7, #00f2ff);
+    background-size: 300% 300%;
+    animation: gradientMove 4s ease infinite;
+    box-shadow: 0 0 15px rgba(168,85,247,0.7);
+    transition: width 0.5s ease;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Glow Effect */
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    box-shadow: 0 0 25px rgba(0,242,255,0.4);
+    pointer-events: none;   /* ✅ SAFE */
+}
+
+/* ===== Summary Box ===== */
+.summary-box {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;   /* ✅ FIX */
+}
+
+/* Gradient Border (FIXED) */
+.summary-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(90deg,#00f2ff,#a855f7);
+
+    pointer-events: none;   /* 🔥 MAIN FIX */
+    z-index: -1;            /* 🔥 IMPORTANT */
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* ===== Final Advice ===== */
+.final-advice {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 1;   /* ✅ FIX */
+}
+
+/* Gradient Border (FIXED) */
+.final-advice::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(90deg,#00f2ff,#a855f7);
+
+    pointer-events: none;   /* 🔥 MAIN FIX */
+    z-index: -1;            /* 🔥 IMPORTANT */
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* Hover Effect */
+.summary-box:hover,
+.final-advice:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+    box-shadow: 0 15px 40px rgba(168,85,247,0.4);
+}
